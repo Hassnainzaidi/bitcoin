@@ -9,7 +9,7 @@ import tempfile
 import argparse
 
 BINARIES = [
-'bin/bitcoind',
+'bin/viraliumd',
 'bin/bitcoin-cli',
 'bin/bitcoin-tx',
 'bin/bitcoin-wallet',

@@ -1,11 +1,11 @@
 Sample configuration files for:
 ```
-systemd: bitcoind.service
-Upstart: bitcoind.conf
-OpenRC:  bitcoind.openrc
-         bitcoind.openrcconf
-CentOS:  bitcoind.init
-macOS:   org.bitcoin.bitcoind.plist
+systemd: viraliumd.service
+Upstart: viraliumd.conf
+OpenRC:  viraliumd.openrc
+         viraliumd.openrcconf
+CentOS:  viraliumd.init
+macOS:   org.bitcoin.viraliumd.plist
 ```
 have been made available to assist packagers in creating node packages here.
 

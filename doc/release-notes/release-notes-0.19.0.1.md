@@ -19,7 +19,7 @@ How to Upgrade
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes for older versions), then run the
 installer (on Windows) or just copy over `/Applications/Bitcoin-Qt` (on Mac)
-or `bitcoind`/`bitcoin-qt` (on Linux).
+or `viraliumd`/`bitcoin-qt` (on Linux).
 
 Upgrading directly from a version of Bitcoin Core that has reached its EOL is
 possible, but might take some time if the datadir needs to be migrated.  Old
@@ -90,7 +90,7 @@ Updated settings
   provide peers connecting using the indicated interfaces or IP
   addresses.  If no permissions are specified with an address or CIDR
   network, the implicit default permissions are the same as previous
-  releases.  See the `bitcoind -help` output for these two options for
+  releases.  See the `viraliumd -help` output for these two options for
   details about the available permissions. (#16248)
 
 - Users setting custom `dbcache` values can increase their setting slightly
@@ -352,9 +352,9 @@ Wallet
   failing until the first block is pruned. (#15870)
 
 - When creating a transaction with a fee above `-maxtxfee` (default 0.1
-  BTC), the RPC commands `walletcreatefundedpsbt` and
+  VIR), the RPC commands `walletcreatefundedpsbt` and
   `fundrawtransaction` will now fail instead of rounding down the fee.
-  Be aware that the `feeRate` argument is specified in BTC per 1,000
+  Be aware that the `feeRate` argument is specified in VIR per 1,000
   vbytes, not satoshi per vbyte. (#16257)
 
 - A new wallet flag `avoid_reuse` has been added (default off). When
@@ -545,7 +545,7 @@ Build system changes
 - #16251 Improve signrawtransaction error reporting (ajtowns)
 - #16873 fix regression in gettransaction (jonatack)
 - #16512 Shuffle inputs and outputs after joining psbts (achow101)
-- #16521 Use the default maxfeerate value as BTC/kB (Remagpie)
+- #16521 Use the default maxfeerate value as VIR/kB (Remagpie)
 - #16817 Fix casing in getblockchaininfo to be inline with other fields (dangershony)
 - #17131 fix -rpcclienttimeout 0 option (fjahr)
 - #17249 Add missing deque include to fix build (jbeich)
@@ -569,7 +569,7 @@ Build system changes
 - #16291 Stop translating PACKAGE_NAME (MarcoFalke)
 - #16380 Remove unused bits from the service flags enum (MarcoFalke)
 - #16379 Fix autostart filenames on Linux for testnet/regtest (hebasto)
-- #16366 init: Use InitError for all errors in bitcoind/qt (MarcoFalke)
+- #16366 init: Use InitError for all errors in viraliumd/qt (MarcoFalke)
 - #16436 Do not create payment server if -disablewallet option provided (hebasto)
 - #16514 Remove unused RPCConsole::tabFocus (promag)
 - #16497 Generate bech32 addresses by default (take 2, fixup) (MarcoFalke)
@@ -630,7 +630,7 @@ Build system changes
 - #16235 Cleaned up and consolidated msbuild files (no code changes) (sipsorcery)
 - #16246 MSVC: Fix error in debug mode (Fix #16245) (NicolasDorier)
 - #16183 xtrans: Configure flags cleanup (dongcarl)
-- #16258 [MSVC]: Create the config.ini as part of bitcoind build (NicolasDorier)
+- #16258 [MSVC]: Create the config.ini as part of viraliumd build (NicolasDorier)
 - #16271 remove -Wall from rapidcheck build flags (fanquake)
 - #16309 [MSVC] allow user level project customization (NicolasDorier)
 - #16308 [MSVC] Copy build output to src/ automatically after build (NicolasDorier)
@@ -791,7 +791,7 @@ Build system changes
 - #16920 Fix extra_args in wallet_import_rescan.py (MarcoFalke)
 - #16918 Make PORT_MIN in test runner configurable (MarcoFalke)
 - #16941 travis: Disable feature_block in tsan run due to oom (MarcoFalke)
-- #16929 follow-up to rpc: default maxfeerate value as BTC/kB (jonatack)
+- #16929 follow-up to rpc: default maxfeerate value as VIR/kB (jonatack)
 - #16959 ci: Set $host before setting fallback values (MarcoFalke)
 - #16961 Remove python dead code linter (laanwj)
 - #16931 add unittests for CheckProofOfWork (soroosh-sdi)
@@ -851,7 +851,7 @@ Build system changes
 - #16556 Fix systemd service file configuration directory setup (setpill)
 - #15615 Add log output during initial header sync (jonasschnelli)
 - #16774 Avoid unnecessary "Synchronizing blockheaders" log messages (jonasschnelli)
-- #16489 log: harmonize bitcoind logging (jonatack)
+- #16489 log: harmonize viraliumd logging (jonatack)
 - #16577 util: Cbufferedfile fixes and unit test (LarryRuane)
 - #16984 util: Make thread names shorter (hebasto)
 - #17038 Don't rename main thread at process level (laanwj)
@@ -945,7 +945,7 @@ Build system changes
 - #16885 Update tx-size-small comment with relevant CVE disclosure (instagibbs)
 - #16900 Fix doxygen comment for SignTransaction in rpc/rawtransaction_util (MarcoFalke)
 - #16914 Update homebrew instruction for doxygen (Sjors)
-- #16912 Remove Doxygen intro from src/bitcoind.cpp (ch4ot1c)
+- #16912 Remove Doxygen intro from src/viraliumd.cpp (ch4ot1c)
 - #16960 replace outdated OpenSSL comment in test README (fanquake)
 - #16968 Remove MSVC update step from translation process (laanwj)
 - #16953 Improve test READMEs (fjahr)
